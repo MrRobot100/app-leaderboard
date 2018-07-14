@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+  <table>
+    <tr>
+      <td>Nombre</td>
+      <td>Apellido</td>
+      <td>Puntaje</td>
+      <td>Posicion</td>
+      <td>Posicion vieja</td>
+      <td>Diferencia</td>
+    </tr>
+  {% for usuario in usuarios %}
+    <tr>
+      <td>{{ usuario.nombre }}</td>
+      <td>{{ usuario.apellido }}</td>
+      <td>{{ usuario.puntaje }}</td>
+      <td>{{ usuario.posicion }}</td>
+      <td>{{ usuario.posicion_old }}</td>
+      <td>{{ usuario.diff }}</td>
+    <tr>
+  {% endfor %}
+
+</table>
+</body>
+</html>
