@@ -1,26 +1,53 @@
 <html>
 <head></head>
+{% load static %}
+<style type="text/css">
+
+  #main{
+    width:700px;
+    height:700px;
+    background-color:rgba(0, 0, 0, 0.7);
+    position:relative;
+    margin-left:-350px; /* half of width */
+    margin-top:-350px;  /* half of height */
+    top:50%;
+    left:50%;
+}
+
+body{
+  background-image: url("{% static 'back.jpg' %}");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: white;
+}
+
+
+</style>
 <body>
-  <table>
+  <div id="main">
+  <table align="center">
+    <font color="white">
     <tr>
-      <td>Nombre</td>
-      <td>Apellido</td>
-      <td>Puntaje</td>
-      <td>Posicion</td>
-      <td>Posicion vieja</td>
-      <td>Diferencia</td>
+      <td><font color="white">Posicion</font></td>
+      <td><font color="white">Nombre</font></td>
+      <td><font color="white">Apellido</font></td>
+      <td><font color="white">Puntaje</font></td>
+      <td><font color="white">Diferencia</font></td>
     </tr>
   {% for usuario in usuarios %}
     <tr>
-      <td>{{ usuario.nombre }}</td>
-      <td>{{ usuario.apellido }}</td>
-      <td>{{ usuario.puntaje }}</td>
-      <td>{{ usuario.posicion }}</td>
-      <td>{{ usuario.posicion_old }}</td>
-      <td>{{ usuario.diff }}</td>
+      <td style="width:100px; color:white;">{{ usuario.posicion }}</td>
+      <td style="width:100px; color:white;">{{ usuario.nombre }}</td>
+      <td style="width:100px; color:white;">{{ usuario.apellido }}</td>
+      <td style="width:100px; color:white;">{{ usuario.puntaje }}</td>
+      <td style="width:100px; color:white;">{{ usuario.diff }}</td>
+
     <tr>
   {% endfor %}
 
-</table>
+  </table>
+  </div>
 </body>
 </html>
