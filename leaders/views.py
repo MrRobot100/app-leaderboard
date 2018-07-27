@@ -16,8 +16,3 @@ def inicio(request):
         usuario.save()
 
     return render(request, 'inicio.html', {'usuarios':usuarios})
-
-#def configuator_admin(request):
-
-
-#def
